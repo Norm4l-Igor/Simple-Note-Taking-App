@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./styles/global.css";
+ import ErrorCompo from './components/ErrorCompo';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -36,6 +37,7 @@ function App() {
   };
 
   return (
+    <ErrorCompo>
     <div className={darkMode ? "dark-mode" : "light-mode"}>
       <Router>
         <Header user={user} onLogout={handleLogout} onToggleDarkMode={toggleDarkMode} darkMode={darkMode} />
@@ -48,6 +50,7 @@ function App() {
         <Footer />
       </Router>
     </div>
+    </ErrorCompo>
   );
 }
 
